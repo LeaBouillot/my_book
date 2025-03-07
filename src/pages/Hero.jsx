@@ -113,10 +113,6 @@ const Hero = () => {
                 alt="Profile de Léa"
                 className="object-cover w-full h-auto shadow-xl aspect-square rounded-2xl"
               />
-              {/* <div className="absolute p-4 bg-white shadow-lg -bottom-6 -right-6 rounded-xl">
-                <div className="text-lg font-bold text-indigo-600">3+</div>
-                <div className="text-sm text-gray-500">années d'expérience</div>
-              </div> */}
             </div>
           </div>
         </div>
