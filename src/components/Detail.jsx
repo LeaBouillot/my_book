@@ -54,14 +54,14 @@ const Detail = () => {
       </div>
 
       {/* Description */}
-      <div className="container max-w-4xl px-4 mx-auto mb-20">
+      <div className="container max-w-4xl px-4 mx-auto mb-7">
         <h2 className="mb-8 text-3xl font-bold text-gray-900">Description</h2>
         <p className="text-gray-600">{project.desc}</p>
       </div>
 
       {/* Sections de contenu dynamiques */}
       {project.content && project.content.map((paragraph, index) => (
-        <div key={index} className="container max-w-4xl px-4 mx-auto mb-20">
+        <div key={index} className="container max-w-4xl px-4 mx-auto mb-7">
           <p className="text-gray-600">{paragraph}</p>
         </div>
       ))}
