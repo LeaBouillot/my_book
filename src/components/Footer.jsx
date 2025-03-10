@@ -16,9 +16,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 pb-8 mb-8 border-b border-gray-800 md:grid-cols-3">
           {/* Logo et description */}
           <div className="col-span-1">
-            <h2 className="mb-4 text-2xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text">
-              Portfolio <span className="font-light">Léa</span>
-            </h2>
+            {/* Logo avec lien vers la page d'accueil */}
+            <Link to="/" onClick={() => setActiveSection("Home")}>
+              <h2 className="mb-4 text-2xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text">
+                Portfolio <span className="font-light">Léa</span>
+              </h2>
+            </Link>
+
             <p className="max-w-sm text-gray-400">
               Développeuse web passionnée, spécialisée dans la création
               d'expériences web modernes et responsives.

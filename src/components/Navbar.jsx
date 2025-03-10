@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // Importation des icônes sans Twitter
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -53,10 +53,12 @@ const Navbar = () => {
       }`}
     >
       <div className="flex justify-between items-center max-w-[1240px] mx-auto h-20 px-6">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text">
-          Portfolio <span className="font-light">Léa</span>
-        </h1>
+        {/* Logo avec lien vers la page d'accueil */}
+        <Link to="/" onClick={() => setActiveSection("Home")}>
+          <h1 className="text-2xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text">
+            Portfolio <span className="font-light">Léa</span>
+          </h1>
+        </Link>
 
         {/* Navigation desktop */}
         <ul className="hidden space-x-1 md:flex">
@@ -103,10 +105,19 @@ const Navbar = () => {
 
             {/* Contenu du menu */}
             <div className="px-8 py-20">
-              <h1 className="pb-2 mb-12 text-3xl font-bold text-white border-b border-indigo-600">
-                Portfolio{" "}
-                <span className="font-light text-indigo-300">Léa</span>
-              </h1>
+              {/* Logo dans le menu mobile également avec lien */}
+              <Link
+                to="/"
+                onClick={() => {
+                  setActiveSection("Home");
+                  setNav(false);
+                }}
+              >
+                <h1 className="pb-2 mb-12 text-3xl font-bold text-white border-b border-indigo-600">
+                  Portfolio{" "}
+                  <span className="font-light text-indigo-300">Léa</span>
+                </h1>
+              </Link>
 
               <ul className="space-y-6">
                 {navItems.slice(0, 4).map((item) => (
@@ -140,7 +151,7 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              {/* Réseaux sociaux dans le menu mobile - SANS TWITTER */}
+              {/* Réseaux sociaux dans le menu mobile */}
               <div className="absolute left-0 right-0 px-8 bottom-16">
                 <div className="flex justify-center space-x-4">
                   {socialMedia.map((social) => (
