@@ -27,7 +27,7 @@ const Hero = () => {
             </h1>
 
             <h2 className="max-w-lg text-xl text-gray-600 md:text-2xl">
-              Junior enthousiaste, prêt à coder l&apos;avenir.
+              Junior enthousiaste, prête à coder l&apos;avenir.
             </h2>
 
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">
