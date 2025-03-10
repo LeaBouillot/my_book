@@ -86,7 +86,7 @@ const Footer = () => {
         {/* Section inférieure avec copyright */}
         <div className="flex flex-col items-center justify-between pt-4 md:flex-row">
           <p className="mb-4 text-sm text-gray-500 md:mb-0">
-            © {currentYear} Portfolio Léa. Tous droits réservés.
+            © {currentYear} Developed by Léa. All rights reserved.
           </p>
           <div className="text-sm text-gray-500">
             <a href="#" className="transition-colors hover:text-indigo-300">
