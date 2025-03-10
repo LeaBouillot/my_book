@@ -1,4 +1,4 @@
-# My Portfolio-frontend
+## My Portfolio-frontend
 
 ## Description
 Ce projet est un portfolio personnel développé avec React et Vite. Il présente mes compétences, projets et informations professionnelles dans une interface moderne et responsive.
