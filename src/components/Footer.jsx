@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  AiOutlineMail,
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // Changé pour utiliser les mêmes icônes que la navbar
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -17,7 +14,7 @@ const Footer = () => {
           {/* Logo et description */}
           <div className="col-span-1">
             {/* Logo avec lien vers la page d'accueil */}
-            <Link to="/" onClick={() => setActiveSection("Home")}>
+            <Link to="/">
               <h2 className="mb-4 text-2xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-purple-400 bg-clip-text">
                 Portfolio <span className="font-light">Léa</span>
               </h2>
@@ -57,32 +54,24 @@ const Footer = () => {
               leadreamcoder@gmail.com
             </a>
 
-            {/* Réseaux sociaux */}
+            {/* Réseaux sociaux avec les mêmes icônes que la navbar */}
             <div className="flex mt-6 space-x-4">
               <a
                 href="https://github.com/LeaBouillot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-indigo-700"
+                className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full text-gray-300 hover:bg-indigo-700 hover:text-white"
               >
-                <AiOutlineGithub className="text-xl" />
+                <FaGithub size={20} /> {/* Icône cohérente avec la navbar */}
               </a>
               <a
                 href="https://www.linkedin.com/in/lea-bouillot-developpeur-web/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-indigo-700"
+                className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full text-gray-300 hover:bg-indigo-700 hover:text-white"
               >
-                <AiOutlineLinkedin className="text-xl" />
+                <FaLinkedin size={20} /> {/* Icône cohérente avec la navbar */}
               </a>
-              {/* <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-indigo-700"
-              >
-                <AiOutlineTwitter className="text-xl" />
-              </a> */}
             </div>
           </div>
         </div>
