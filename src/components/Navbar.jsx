@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"; // Importation des icônes de réseaux sociaux
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // Importation des icônes sans Twitter
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -30,11 +30,18 @@ const Navbar = () => {
 
   const navItems = ["Home", "Skills", "Projets", "Contact"];
 
-  // Définition des icônes et URLs pour les réseaux sociaux
+  // Définition des icônes et URLs pour les réseaux sociaux (sans Twitter)
   const socialMedia = [
-    { name: "github", icon: <FaGithub size={20} />, url: "https://github.com" },
-    { name: "linkedin", icon: <FaLinkedin size={20} />, url: "https://linkedin.com" },
-    { name: "twitter", icon: <FaTwitter size={20} />, url: "https://twitter.com" }
+    {
+      name: "github",
+      icon: <FaGithub size={20} />,
+      url: "https://github.com/LeaBouillot",
+    },
+    {
+      name: "linkedin",
+      icon: <FaLinkedin size={20} />,
+      url: "https://www.linkedin.com/in/lea-bouillot-developpeur-web/",
+    },
   ];
 
   return (
@@ -133,7 +140,7 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              {/* Réseaux sociaux dans le menu mobile - CORRIGÉ */}
+              {/* Réseaux sociaux dans le menu mobile - SANS TWITTER */}
               <div className="absolute left-0 right-0 px-8 bottom-16">
                 <div className="flex justify-center space-x-4">
                   {socialMedia.map((social) => (
