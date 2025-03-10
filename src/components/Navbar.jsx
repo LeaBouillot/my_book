@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
-import { Link } from "react-router-dom"; // Importation de Link pour la navigation
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"; // Importation des icônes de réseaux sociaux
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -29,6 +30,13 @@ const Navbar = () => {
 
   const navItems = ["Home", "Skills", "Projets", "Contact"];
 
+  // Définition des icônes et URLs pour les réseaux sociaux
+  const socialMedia = [
+    { name: "github", icon: <FaGithub size={20} />, url: "https://github.com" },
+    { name: "linkedin", icon: <FaLinkedin size={20} />, url: "https://linkedin.com" },
+    { name: "twitter", icon: <FaTwitter size={20} />, url: "https://twitter.com" }
+  ];
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -48,7 +56,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <li key={item}>
               <Link
-                to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Utilisation de Link pour la navigation interne
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 className={`px-4 py-2 rounded-lg transition-all ${
                   activeSection === item
                     ? "bg-indigo-600/30 text-indigo-300 font-medium"
@@ -97,7 +105,7 @@ const Navbar = () => {
                 {navItems.slice(0, 4).map((item) => (
                   <li key={item}>
                     <Link
-                      to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Utilisation de Link pour la navigation interne
+                      to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                       className={`w-full text-left py-2 text-lg font-medium transition-all border-l-4 pl-3 ${
                         activeSection === item
                           ? "border-indigo-400 text-white"
@@ -105,7 +113,7 @@ const Navbar = () => {
                       }`}
                       onClick={() => {
                         setActiveSection(item);
-                        setNav(false); // Fermer le menu mobile après un clic
+                        setNav(false);
                       }}
                     >
                       {item}
@@ -125,18 +133,18 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              {/* Réseaux sociaux dans le menu mobile */}
+              {/* Réseaux sociaux dans le menu mobile - CORRIGÉ */}
               <div className="absolute left-0 right-0 px-8 bottom-16">
                 <div className="flex justify-center space-x-4">
-                  {["github", "linkedin", "twitter"].map((social) => (
+                  {socialMedia.map((social) => (
                     <a
-                      key={social}
-                      href={`https://${social}.com`}
+                      key={social.name}
+                      href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full hover:bg-indigo-700"
+                      className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-800 rounded-full text-gray-300 hover:bg-indigo-700 hover:text-white"
                     >
-                      <div className="w-5 h-5 bg-gray-300 rounded-sm" />
+                      {social.icon}
                     </a>
                   ))}
                 </div>
