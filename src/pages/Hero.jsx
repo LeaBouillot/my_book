@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import profilepic from "../assets/profilepic5.png";
+import profilepic from "../assets/profilepic5.jpg";
 import cvFile from "../assets/cv.pdf";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { HiEnvelope } from "react-icons/hi2";
