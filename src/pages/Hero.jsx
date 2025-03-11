@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import profilepic from "../assets/profilepic5.jpg";
 import cvFile from "../assets/cv.pdf";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
@@ -6,11 +6,20 @@ import { HiEnvelope } from "react-icons/hi2";
 
 const Hero = () => {
   const [showDownload, setShowDownload] = useState(false);
+  const [isBrowser, setIsBrowser] = useState(false);
+
+  // S'exécute uniquement côté client
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
 
   const handleShowCV = () => {
-    window.open(cvFile, "_blank");
-    setShowDownload(true);
+    if (isBrowser) {
+      window.open(cvFile, "_blank");
+      setShowDownload(true);
+    }
   };
+  
 
   return (
     <header className="pt-32 pb-16 bg-gradient-to-br from-white to-indigo-100">
