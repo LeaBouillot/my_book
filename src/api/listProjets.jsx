@@ -41,7 +41,7 @@ export const listProjets = [
     ],
     technologies: ["Symfony7", "JavaScript", "Api Stripe", "GIT", "Github"],
     projectLink: "https://github.com/LeaBouillot/Hall4All_Symfony7.git",
-    site: "https://hall.hall4all.fr",
+    site: "https://hall4hall.leabouillot.top",
   },
   {
     id: 3,
@@ -90,7 +90,7 @@ export const listProjets = [
     "GitHub",
   ],
     projectLink: "https://github.com/LeaBouillot/votre-chef-app.git",
-    site: "",
+    site: "https://votre-chef-recipes.vercel.app",
   },
   {
     id: 5,
